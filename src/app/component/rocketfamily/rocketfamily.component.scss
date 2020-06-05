@@ -1,0 +1,30 @@
+.rocket-family {
+    margin-top:60px;
+    td {
+        padding: 0px;  
+        color: #ffffff;
+        width:14%;
+    }
+    .body-td {padding-left: 10px;}
+    .subtable {
+        width:100%;
+    }
+    table {
+        thead {
+            tr {background: #000324;}
+            th {
+                font: bold 11px"Helvetica Neue", Verdana, Arial, Helvetica, sans-serif;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-align: left;
+                padding: 6px 6px 6px 12px;
+                width:16%;
+                color: #ffffff;
+            }
+        }
+        tbody {
+            .family-list:nth-child(even) { background: #C1BEC6;}
+            .family-list:nth-child(odd) { background: #63bad6;}
+        }
+    }
+}

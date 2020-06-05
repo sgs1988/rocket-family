@@ -1,0 +1,86 @@
+<div class="rocket-family">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="rocketfamilyList.length > 0">
+        <tr *ngFor="let family of rocketfamilyList; let familyIndex=index;" class="family-list">
+            <td colspan="3">
+                <table class="subtable">
+                    <tbody>
+                        <tr>
+                            <td class="body-td">{{ family.id }}</td>
+                            <td class="body-td">{{ family.name }}</td>
+                            <td class="body-td"><button class="btn btn-primary" (click)="rocketDetails(family.id, familyIndex)"> Rocket List</button></td>
+                        </tr>
+                        <tr *ngIf="family.rocketList.length > 0" class="rocket-list">
+                            <td colspan="3">
+                                <table class="subtable">
+                                    <thead>
+                                        <tr>
+                                            <th>Rocket Id</th>
+                                            <th>Rocket Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let rocket of family.rocketList; let rocketIndex=index;">
+                                            <td colspan="3">
+                                                <table class="subtable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="body-td">{{ rocket.id }}</td>
+                                                            <td class="body-td">{{ rocket.name }}</td>
+                                                            <td class="body-td"><button class="btn btn-primary" (click)="launcheDetails(rocket.id, familyIndex, rocketIndex)"> Launche List</button></td>
+                                                        </tr>
+                                                        <tr *ngIf="rocket.launcheList.length > 0">
+                                                                <td colspan="3">
+                                                                    <table class="subtable">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Launche Id</th>
+                                                                                <th>Launche Name</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr *ngFor="let launche of rocket.launcheList">
+                                                                                <td colspan="3">
+                                                                                    <table class="subtable">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="body-td">{{ launche.id }}</td>
+                                                                                                <td class="body-td">{{ launche.name }}</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr *ngIf="rocket.launcheList.length === 0 && rocket.expand === true" class="rocket-list">
+                                                                <td colspan="3" class="text-center">No record for Launche List</td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr *ngIf="family.rocketList.length === 0 && family.expand === true" class="rocket-list">
+                            <td colspan="3" class="text-center">No record for Rocket List</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>

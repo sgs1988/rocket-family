@@ -1,0 +1,17 @@
+image: node:latest
+
+before_script:
+  - export CHROME_BIN=google-chrome
+
+stages:
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+build-image-job:
+  stage: build
+  script:
+    - ./node_modules/@angular/cli/bin/ng build --prod
+
